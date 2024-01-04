@@ -70,7 +70,7 @@ DecafDataset/
 ```
 2) For the online visualization of the dataset, run:
   ```bash
-	python visualizer.py --dataset_path /PATH/TO/DATASET --vis_con 0 --vis3d 1 --vis2d 1 --show_every 5
+	python src/visualizer.py --dataset_path /PATH/TO/DATASET --vis_con 0 --vis3d 1 --vis2d 1 --show_every 5
   ``` 
 <p align="center">
   <img src="./images/visualization.gif" alt="Alt text for the GIF">
@@ -85,26 +85,26 @@ The example above shows the image sequence with keypoints overlay. Green keypoin
 
 3) Example of how to flip deformations, contacts and images for data augmentation:
   ```bash
-	python flipping_data.py --dataset_path /PATH/TO/DATASET --save_path ./results/flip/ --vis_3d 1
+	python src/flipping_data.py --dataset_path /PATH/TO/DATASET --save_path ./results/flip/ --vis_3d 1
   ```
   The original and flipped data will be saved under the path specified by --save_path option.
 <div style="display: flex;">
   <figure style="flex: 1; margin-right: 10px;text-align: center;">
-    <img src="./images/ori3d.png" alt="Exapmle RGB image" style="width: 100%;"/>
+    <img src="./images/ori3d.png" alt="Exapmle RGB image" style="width:80%;"/>
     <figcaption>Original 3D mesh with deformation + contacts</figcaption>
   </figure>
   <figure style="flex: 1;text-align: center;">
-    <img src="./images/flipped3d.png" alt="Masked image" style="width: 100%;"/>
+    <img src="./images/flipped3d.png" alt="Masked image" style="width: 80%;"/>
     <figcaption>Flipped 3D mesh with deformation + contacts</figcaption>
   </figure>
 </div>
 <div style="display: flex;">
   <figure style="flex: 1; margin-right: 10px;text-align: center;">
-    <img src="./images/img.png" alt="Exapmle RGB image" style="width: 100%;"/>
+    <img src="./images/img.png" alt="Exapmle RGB image" style="width: 80%;"/>
     <figcaption>Original image with projected vertices</figcaption>
   </figure>
   <figure style="flex: 1;text-align: center;">
-    <img src="./images/img_f.png" alt="Masked image" style="width: 100%;"/>
+    <img src="./images/img_f.png" alt="Masked image" style="width: 80%;"/>
     <figcaption>Flipped image with projected vertices</figcaption>
   </figure>
 </div>
@@ -120,7 +120,7 @@ Turn on --vis_3d  option for the interactive 3D visualization:
 
 4) Example of how to apply masking on an image:
   ```bash
-	python get_masked_image.py --dataset_path /PATH/TO/DATASET --save_path ./results/mask/
+	python src/get_masked_image.py --dataset_path /PATH/TO/DATASET --save_path ./results/mask/
   ``` 
 <div style="display: flex;">
   <figure style="flex: 1; margin-right: 10px;text-align: center;">
@@ -135,7 +135,7 @@ Turn on --vis_3d  option for the interactive 3D visualization:
 
 5) Example of how to obtain consecutive data ids:
   ```bash
-	python get_consecutive_ids.py --dataset_path /PATH/TO/DATASET  
+	python src/get_consecutive_ids.py --dataset_path /PATH/TO/DATASET  
   ``` 
 
 
