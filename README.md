@@ -90,21 +90,21 @@ The example above shows the image sequence with keypoints overlay. Green keypoin
   The original and flipped data will be saved under the path specified by --save_path option.
 <div style="display: flex;">
   <figure style="flex: 1; margin-right: 10px;text-align: center;">
-    <img src="./images/ori3d.png" alt="Exapmle RGB image" style="width:80%;"/>
+    <img src="./images/ori3d.png" alt="Exapmle RGB image" style="width:48%;"/>
     <figcaption>Original 3D mesh with deformation + contacts</figcaption>
   </figure>
   <figure style="flex: 1;text-align: center;">
-    <img src="./images/flipped3d.png" alt="Masked image" style="width: 80%;"/>
+    <img src="./images/flipped3d.png" alt="Masked image" style="width: 48%;"/>
     <figcaption>Flipped 3D mesh with deformation + contacts</figcaption>
   </figure>
 </div>
 <div style="display: flex;">
   <figure style="flex: 1; margin-right: 10px;text-align: center;">
-    <img src="./images/img.png" alt="Exapmle RGB image" style="width: 80%;"/>
+    <img src="./images/img.png" alt="Exapmle RGB image" style="width: 48%;"/>
     <figcaption>Original image with projected vertices</figcaption>
   </figure>
   <figure style="flex: 1;text-align: center;">
-    <img src="./images/img_f.png" alt="Masked image" style="width: 80%;"/>
+    <img src="./images/img_f.png" alt="Masked image" style="width: 48%;"/>
     <figcaption>Flipped image with projected vertices</figcaption>
   </figure>
 </div>
