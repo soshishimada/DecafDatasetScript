@@ -72,7 +72,7 @@ First, make sure again the virtual environment in which the packages are install
     ├── test
     └── train
     ```
-2) For the online visualization of the dataset, run:
+2) For the online visualization of the dataset, run the following command. Note that the path to the DecafDataset needs to be specified by --dataset_path option. E.g., Provide "--dataset_path ../DecafDataset" if your DecafDataset folder is located under the same folder as "DecafDatasetScript" folder.:
     ```bash
     python src/visualizer.py --dataset_path /PATH/TO/DATASET --vis_con 0 --vis3d 1 --vis2d 1 --show_every 5
     ``` 
