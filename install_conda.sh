@@ -9,9 +9,9 @@ eval "$(conda shell.bash hook)"
 
 conda activate $CONDA_ENV_NAME
 
-#pip install -r requirements.txt
+pip install -r requirements.txt
 
-#pip install git+'https://github.com/otaheri/MANO'
+pip install git+'https://github.com/otaheri/MANO'
 
 
 

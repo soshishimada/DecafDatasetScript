@@ -44,7 +44,13 @@ Clone the repo:
     bash install_conda.sh
     ```
     
-2) For installing the same versions of torch and pytorch3D as the ones we used, you can run the command below. Please see their [official page](https://pytorch3d.org/) for more details.  
+2) For installing the same versions of torch and pytorch3D as the ones we used, you can run the commands below. Please see their [official page](https://pytorch3d.org/) for more details.  
+<br>
+First, make sure again the virtual environment in which the packages are installed in the last step is activated ("decaf_env" is the conda environment in this example):
+    ```bash
+    conda activate decaf_env
+    ```  
+    Then run:
     ```bash
     pip install torch==1.12.1 --index-url https://download.pytorch.org/whl/cu113&&git clone https://github.com/facebookresearch/pytorch3d.git&&cd ./pytorch3d&&git checkout tags/v0.7.2&&pip install -e .&&cd..
     ```
