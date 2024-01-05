@@ -35,108 +35,106 @@ Clone the repo:
 * PyTorch tested version 1.12.1+cu113
 * PyTorch3d tested version 0.7.2 
 * MANO pytorch implementation from [here](https://github.com/otaheri/MANO).
- 
- 
-  
 1) To install the dependencies other than PyTorch and Pytorch3d, you can run:
-  ```bash
-  pip install -r requirements.txt&&pip install git+'https://github.com/otaheri/MANO'
-  ```
-  &nbsp;&nbsp;&nbsp;&nbsp;Or use conda environment:
-  ```bash
-  bash install_conda.sh
-  ```
-  
+    ```bash
+    pip install -r requirements.txt&&pip install git+'https://github.com/otaheri/MANO'
+    ```
+    &nbsp;&nbsp;&nbsp;&nbsp;Or use conda environment:
+    ```bash
+    bash install_conda.sh
+    ```
+    
 2) For installing the same versions of torch and pytorch3D as the ones we used, you can run the command below. Please see their [official page](https://pytorch3d.org/) for more details.  
-  ```bash
-  pip install torch==1.12.1 --index-url https://download.pytorch.org/whl/cu113&&git clone https://github.com/facebookresearch/pytorch3d.git&&cd ./pytorch3d&&git checkout tags/v0.7.2&&pip install -e .&&cd..
-  ```
+    ```bash
+    pip install torch==1.12.1 --index-url https://download.pytorch.org/whl/cu113&&git clone https://github.com/facebookresearch/pytorch3d.git&&cd ./pytorch3d&&git checkout tags/v0.7.2&&pip install -e .&&cd..
+    ```
 
 ## Example scripts
 1) After downloading the dataset (DecafDataset), place the head and hand model under "DecafDataset/assets":
-*  Download "FLAME 2020" from [here](https://flame.is.tue.mpg.de/index.html). Extract and place "generic_model.pkl" under assets folder.
-* Download the mano hand model "mano_v1_2" from [here](https://mano.is.tue.mpg.de/index.html). Place it under assets folder.
-* Get "landmark_embedding.npy" from [here](https://github.com/yfeng95/DECA/tree/master/data). Place it under assets folder.
-```bash
-DecafDataset/
-├── assets/
-│   ├── left_right_face_corresps.pkl
-│   ├── generic_model.pkl
-│   ├── landmark_embedding.npy
-│   ├── mano_v1_2
-│   └── FLAME_neck_idx.npy
-├── test
-└── train
-```
+    *  Download "FLAME 2020" from [here](https://flame.is.tue.mpg.de/index.html). Extract and place "generic_model.pkl" under assets folder.
+    * Download the mano hand model "mano_v1_2" from [here](https://mano.is.tue.mpg.de/index.html). Place it under assets folder.
+    * Get "landmark_embedding.npy" from [here](https://github.com/yfeng95/DECA/tree/master/data). Place it under assets folder.
+    
+    Now the folder should look like this:
+    ```bash
+    DecafDataset/
+    ├── assets/
+    │   ├── left_right_face_corresps.pkl
+    │   ├── generic_model.pkl
+    │   ├── landmark_embedding.npy
+    │   ├── mano_v1_2
+    │   └── FLAME_neck_idx.npy
+    ├── test
+    └── train
+    ```
 2) For the online visualization of the dataset, run:
-  ```bash
-	python src/visualizer.py --dataset_path /PATH/TO/DATASET --vis_con 0 --vis3d 1 --vis2d 1 --show_every 5
-  ``` 
-<p align="center">
-  <img src="./images/visualization.gif" alt="Alt text for the GIF">
-</p>
-The example above shows the image sequence with keypoints overlay. Green keypoints are from 2D keypont detectors and blue keypoints are projected points of the 3D face and hand.  
-
---vis_con: visualization of contacts on a face and a hand.  
---show_every: visualize the data every n frames.  
---vis3d: visualization in 3D  
---vis2d: visualization in 2D  
-
+    ```bash
+    python src/visualizer.py --dataset_path /PATH/TO/DATASET --vis_con 0 --vis3d 1 --vis2d 1 --show_every 5
+    ``` 
+    The example below shows the image sequence with keypoints overlay. Green keypoints are from 2D keypont detectors and blue keypoints are projected points of the 3D face and hand.  
+    
+    --vis_con: visualization of contacts on a face and a hand.  
+    --show_every: visualize the data every n frames.  
+    --vis3d: visualization in 3D  
+    --vis2d: visualization in 2D  
+<div style="display: flex; justify-content: center; width: 100%;">
+  <img src="./images/visualization.gif" style="width: 93%; max-width: 100%;" /> 
+</div>  
+<br>
+<br>
 
 3) Example of how to flip deformations, contacts and images for data augmentation:
-  ```bash
-	python src/flipping_data.py --dataset_path /PATH/TO/DATASET --save_path ./results/flip/ --vis_3d 1
-  ```
-  The original and flipped data will be saved under the path specified by --save_path option.
-<div style="display: flex;">
-  <figure style="flex: 1; margin-right: 10px;text-align: center;">
-    <img src="./images/ori3d.png" alt="Exapmle RGB image" style="width:48%;"/>
-    <figcaption>Original 3D mesh with deformation + contacts</figcaption>
-  </figure>
-  <figure style="flex: 1;text-align: center;">
-    <img src="./images/flipped3d.png" alt="Masked image" style="width: 48%;"/>
-    <figcaption>Flipped 3D mesh with deformation + contacts</figcaption>
-  </figure>
-</div>
-<div style="display: flex;">
-  <figure style="flex: 1; margin-right: 10px;text-align: center;">
-    <img src="./images/img.png" alt="Exapmle RGB image" style="width: 48%;"/>
-    <figcaption>Original image with projected vertices</figcaption>
-  </figure>
-  <figure style="flex: 1;text-align: center;">
-    <img src="./images/img_f.png" alt="Masked image" style="width: 48%;"/>
-    <figcaption>Flipped image with projected vertices</figcaption>
-  </figure>
-</div>
 
-Turn on --vis_3d  option for the interactive 3D visualization:
+    ```bash
+    python src/flipping_data.py --dataset_path /PATH/TO/DATASET --save_path ./results/flip/ --vis_3d 1
+    ```
+    The original and flipped data will be saved under the path specified by --save_path option.
+
+<div style="display: flex; justify-content: center; width: 100%;">
+  <img src="./images/ori3d.png" style="width: 46%; max-width: 50%;" /> 
+  <img src="./images/flipped3d.png" style="width: 46%; max-width: 50%;" />
+  <!--<figcaption style="text-align: center;">&nbsp;&nbsp;&nbsp;&nbsp; Original 3D mesh with deformation + contacts &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Flipped 3D mesh with deformation + contacts</figcaption>-->
+</div>
+ <center>
+  Original 3D mesh with deformation + contacts.&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;Flipped 3D mesh with deformation + contacts
+</center> 
+<br>
+<div style="display: flex; justify-content: center; width: 100%;">
+  <img src="./images/img.png" style="width: 46%; max-width: 50%;" /> 
+  <img src="./images/img_f.png" style="width: 46%; max-width: 50%;" />
+  <!--<figcaption style="text-align: center;">&nbsp;&nbsp;&nbsp;&nbsp; Original 3D mesh with deformation + contacts &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Flipped 3D mesh with deformation + contacts</figcaption>-->
+</div>
+<center>
+  Original 3D mesh with deformation + contacts.&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;Flipped 3D mesh with deformation + contacts.
+</center> 
+<br> 
 <figure style="flex: 1; margin-right: 10px;text-align: center;">
     <img src="./images/flip_deform_con.png" alt="Exapmle RGB image" style="width: 60%;"/>
-    <figcaption>Visualization of original and flipped data in a camera frame</figcaption>
+    <figcaption>Turn on --vis_3d  option for the interactive 3D visualization.</figcaption>
   </figure>
-
+<br>
 
 
 
 4) Example of how to apply masking on an image:
-  ```bash
-	python src/get_masked_image.py --dataset_path /PATH/TO/DATASET --save_path ./results/mask/
-  ``` 
-<div style="display: flex;">
-  <figure style="flex: 1; margin-right: 10px;text-align: center;">
-    <img src="./images/rgb_image.jpg" alt="Exapmle RGB image" style="width: 100%;"/>
-    <figcaption>Original image</figcaption>
-  </figure>
-  <figure style="flex: 1;text-align: center;">
-    <img src="./images/masked_image.jpg" alt="Masked image" style="width: 100%;"/>
-    <figcaption>Masked image</figcaption>
-  </figure>
+    ```bash
+    python src/get_masked_image.py --dataset_path /PATH/TO/DATASET --save_path ./results/mask/
+    ```  
+
+<div style="display: flex; justify-content: center; width: 100%;">
+  <img src="./images/rgb_image.jpg" style="width: 46%; max-width: 50%;" /> 
+  <img src="./images/masked_image.jpg" style="width: 46%; max-width: 50%;" /> 
 </div>
+ <center>
+  Original image&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;Masked image
+</center> 
+
+<br> 
 
 5) Example of how to obtain consecutive data ids:
-  ```bash
-	python src/get_consecutive_ids.py --dataset_path /PATH/TO/DATASET  
-  ``` 
+    ```bash
+    python src/get_consecutive_ids.py --dataset_path /PATH/TO/DATASET  
+    ``` 
 
 
 
