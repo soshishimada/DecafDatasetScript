@@ -73,14 +73,15 @@ Clone the repo:
     ``` 
     The example below shows the image sequence with keypoints overlay. Green keypoints are from 2D keypont detectors and blue keypoints are projected points of the 3D face and hand.  
     
-    --vis_con: visualization of contacts on a face and a hand.  
-    --show_every: visualize the data every n frames.  
-    --vis3d: visualization in 3D  
-    --vis2d: visualization in 2D  
-<div style="display: flex; justify-content: center; width: 100%;">
-  <img src="./images/visualization.gif" style="width: 93%; max-width: 100%;" /> 
-</div>  
-<br>
+    * --vis_con: visualization of contacts on a face and a hand.  
+    * --show_every: visualize the data every n frames.  
+    * --vis3d: visualization in 3D  
+    * --vis2d: visualization in 2D
+
+<p align="center">
+<img src="./images/visualization.gif"  width="80%" /> 
+</p> 
+ 
 <br>
 
 3) Example of how to flip deformations, contacts and images for data augmentation:
@@ -90,45 +91,44 @@ Clone the repo:
     ```
     The original and flipped data will be saved under the path specified by --save_path option.
 
-<div style="display: flex; justify-content: center; width: 100%;">
-  <img src="./images/ori3d.png" style="width: 46%; max-width: 50%;" /> 
-  <img src="./images/flipped3d.png" style="width: 46%; max-width: 50%;" />
-  <!--<figcaption style="text-align: center;">&nbsp;&nbsp;&nbsp;&nbsp; Original 3D mesh with deformation + contacts &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Flipped 3D mesh with deformation + contacts</figcaption>-->
-</div>
- <center>
-  Original 3D mesh with deformation + contacts.&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;Flipped 3D mesh with deformation + contacts
-</center> 
-<br>
-<div style="display: flex; justify-content: center; width: 100%;">
-  <img src="./images/img.png" style="width: 46%; max-width: 50%;" /> 
-  <img src="./images/img_f.png" style="width: 46%; max-width: 50%;" />
-  <!--<figcaption style="text-align: center;">&nbsp;&nbsp;&nbsp;&nbsp; Original 3D mesh with deformation + contacts &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Flipped 3D mesh with deformation + contacts</figcaption>-->
-</div>
-<center>
-  Original 3D mesh with deformation + contacts.&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;Flipped 3D mesh with deformation + contacts.
-</center> 
-<br> 
-<figure style="flex: 1; margin-right: 10px;text-align: center;">
-    <img src="./images/flip_deform_con.png" alt="Exapmle RGB image" style="width: 60%;"/>
-    <figcaption>Turn on --vis_3d  option for the interactive 3D visualization.</figcaption>
-  </figure>
-<br>
+ 
 
-
+<p align="center">
+  <img src="./images/ori3d.png" width="45%" /> 
+  <img src="./images/flipped3d.png" width="45%" /> 
+</p> 
+<p align="center">
+ <em>Original 3D mesh with deformation + contacts.&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;Flipped 3D mesh with deformation + contacts.</em>
+</p>  
+<p align="center">
+ <img src="./images/img.png" width="45%" /> 
+  <img src="./images/img_f.png" width="45%" />
+</p> 
+<p align="center">
+ <em>Original 3D mesh with deformation + contacts.&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;Flipped 3D mesh with deformation + contacts.</em>
+</p>  
+  
+<p align="center">
+<img src="./images/flip_deform_con.png"  width="60%" />  
+</p> 
+<p align="center">
+ <em>Turn on --vis_3d  option for the interactive 3D visualization.</em>
+</p>
 
 4) Example of how to apply masking on an image:
     ```bash
     python src/get_masked_image.py --dataset_path /PATH/TO/DATASET --save_path ./results/mask/
     ```  
 
-<div style="display: flex; justify-content: center; width: 100%;">
-  <img src="./images/rgb_image.jpg" style="width: 46%; max-width: 50%;" /> 
-  <img src="./images/masked_image.jpg" style="width: 46%; max-width: 50%;" /> 
-</div>
- <center>
-  Original image&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;Masked image
-</center> 
+ 
 
+<p align="center">
+ <img src="./images/rgb_image.jpg" width="45%" /> 
+  <img src="./images/masked_image.jpg" width="45%" />
+</p> 
+<p align="center">
+ <em>Original image&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;Masked image</em>
+</p>  
 <br> 
 
 5) Example of how to obtain consecutive data ids:
@@ -140,20 +140,20 @@ Clone the repo:
 
 
 ## License Terms
-Permission is hereby granted, free of charge, to any person or company obtaining a copy of this software and associated documentation files (the "Software") from the copyright holders to use the Software for any non-commercial purpose. Publication, redistribution and (re)selling of the software, of modifications, extensions, and derivates of it, and of other software containing portions of the licensed Software, are not permitted. The Copyright holder is permitted to publically disclose and advertise the use of the software by any licensee. 
+Permission is hereby granted, free of charge, to any person or company obtaining a copy of this dataset and associated documentation files (the "Dataset") from the copyright holders to use the Dataset for any non-commercial purpose. Redistribution and (re)selling of the Dataset, of modifications, extensions, and derivates of it, and of other dataset containing portions of the licensed Dataset, are not permitted. The Copyright holder is permitted to publically disclose and advertise the use of the software by any licensee. 
 
-Packaging or distributing parts or whole of the provided software (including code, models and data) as is or as part of other software is prohibited. Commercial use of parts or whole of the provided software (including code, models and data) is strictly prohibited. Using the provided software for promotion of a commercial entity or product, or in any other manner which directly or indirectly results in commercial gains is strictly prohibited. 
+Packaging or distributing parts or whole of the provided software (including code and data) as is or as part of other datasets is prohibited. Commercial use of parts or whole of the provided dataset (including code  and data) is strictly prohibited.  
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+THE DATASET IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+OUT OF OR IN CONNECTION WITH THE DATASET OR THE USE OR OTHER DEALINGS IN THE
+DATASET.
 
 ## Citation
-If the code is used, the licesnee is required to cite the following publication in any documentation 
+If the dataset is used, the licensee is required to cite the following publication in any documentation 
 or publication that results from the work:
 ```
 @article{
