@@ -51,7 +51,7 @@ First, make sure again the virtual environment in which the packages are install
     ```  
     Then run:
     ```bash
-    pip install torch==1.12.1 --index-url https://download.pytorch.org/whl/cu113&&git clone https://github.com/facebookresearch/pytorch3d.git&&cd ./pytorch3d&&git checkout tags/v0.7.2&&pip install -e .&&cd..
+    pip install torch==1.12.1 --index-url https://download.pytorch.org/whl/cu113&&git clone https://github.com/facebookresearch/pytorch3d.git&&cd ./pytorch3d&&git checkout tags/v0.7.2&&pip install -e .&&cd ..
     ```
 
 ## Example scripts
