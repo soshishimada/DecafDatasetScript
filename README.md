@@ -69,7 +69,12 @@ First, make sure again the virtual environment in which the packages are install
     │   ├── generic_model.pkl
     │   ├── landmark_embedding.npy
     │   ├── mano_v1_2
-    │   └── FLAME_neck_idx.npy
+    │   ├── FLAME_neck_idx.npy
+    │   ├── accurate_shapes
+    │   ├── aug_back_ground
+    │   ├── transformation
+    │   ├── default_mesh.ply
+    │   └── neck_idx.npy
     ├── test
     └── train
     ```
