@@ -23,7 +23,7 @@ This is the official repository of Decaf dataset:
 
 
 ## Download
-The dataset can be downloaded from [here](https://vcai.mpi-inf.mpg.de/projects/Decaf/static/DecafDataset.zip).
+The dataset can be downloaded from [here](https://vcai.mpi-inf.mpg.de/projects/Decaf/static/DecafDataset.zip).  
 If you want the preprocessed images (i.e., background masking + cropping using a bounding box), download the data from [here](https://nextcloud.mpi-klsb.mpg.de/index.php/s/nt4eY7j7cBCQzti).
 ## Dataset Visualization Script Setup 
 Clone the repo:
