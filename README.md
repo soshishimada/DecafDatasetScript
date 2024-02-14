@@ -14,6 +14,7 @@ This is the official repository of Decaf dataset:
 * **3D deformations:** per-vertex 3D deformations for [FLAME head model](https://flame.is.tue.mpg.de/index.html).
 * **Contacts:** per-vertex contact signals for head and hand.
 * **2D key points:** 2D keypoints obtained from [MediaPipe](https://developers.google.com/mediapipe) for a head and for a hand [face_alignment](https://github.com/1adrianb/face-alignment).
+* **2D bounding box:** bounding box for a head and for a hand. 
 * **Parameters:** multi-view fitting results from our studio recording, applicable to both the  [FLAME](https://flame.is.tue.mpg.de/index.html) head model and  [MANO](https://mano.is.tue.mpg.de/) hand model.
 * **RGB Video:** multi-view RGB recordings captured in our studio.
 * **Segmentation mask:** corresponding foreground masks for the RGB videos obtained using [Background Matting](https://github.com/senguptaumd/Background-Matting).
@@ -22,7 +23,7 @@ This is the official repository of Decaf dataset:
 
 
 ## Download
-The dataset can be downloaded from [here](https://vcai.mpi-inf.mpg.de/projects/Decaf/static/DecafDataset.zip).
+The dataset can be downloaded from [here]().
 ## Dataset Visualization Script Setup 
 Clone the repo:
   ```bash
@@ -44,14 +45,9 @@ Clone the repo:
     bash install_conda.sh
     ```
     
-2) For installing the same versions of torch and pytorch3D as the ones we used, you can run the commands below. Please see their [official page](https://pytorch3d.org/) for more details.
-First, make sure again the virtual environment in which the packages are installed in the last step is activated ("decaf_env" is the conda environment in this example):
+2) For installing the same versions of torch and pytorch3D as the ones we used, you can run the command below. Please see their [official page](https://pytorch3d.org/) for more details.  
     ```bash
-    conda activate decaf_env
-    ```  
-    Then run:
-    ```bash
-    pip install torch==1.12.1 --index-url https://download.pytorch.org/whl/cu113&&git clone https://github.com/facebookresearch/pytorch3d.git&&cd ./pytorch3d&&git checkout tags/v0.7.2&&pip install -e .&&cd ..
+    pip install torch==1.12.1 --index-url https://download.pytorch.org/whl/cu113&&git clone https://github.com/facebookresearch/pytorch3d.git&&cd ./pytorch3d&&git checkout tags/v0.7.2&&pip install -e .&&cd..
     ```
 
 ## Example scripts
@@ -72,7 +68,7 @@ First, make sure again the virtual environment in which the packages are install
     ├── test
     └── train
     ```
-2) For the online visualization of the dataset, run the following command. Note that the path to the DecafDataset needs to be specified by --dataset_path option. E.g., Provide "--dataset_path ../DecafDataset" if your DecafDataset folder is located under the same folder as "DecafDatasetScript" folder.:
+2) For the online visualization of the dataset, run:
     ```bash
     python src/visualizer.py --dataset_path /PATH/TO/DATASET --vis_con 0 --vis3d 1 --vis2d 1 --show_every 5
     ``` 
